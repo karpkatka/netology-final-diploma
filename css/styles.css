@@ -32,6 +32,11 @@ body {
   font-weight: 100;
 }
 
+.unavailableFunction {
+  pointer-events: none;
+  background-color: grey;
+}
+
 /* ~~~~~~~~~~~~ Главная ~~~~~~~~~~~~ */
 .page-nav {
   position: sticky;
@@ -171,6 +176,7 @@ body {
   font-size: 1.5rem;
 }
 
+
 /* ~~~~~~~~~~~~ Кинозал ~~~~~~~~~~~~ */
 .acceptin-button {
   display: block;
@@ -184,6 +190,10 @@ body {
   font-size: 1.4rem;
   background-color: #16A6AF;
   color: #FFFFFF;
+}
+
+.acceptin-button__link {
+  text-decoration: none;
 }
 
 .buying {
@@ -281,6 +291,7 @@ body {
 
 .conf-step__chair_taken {
   background-color: transparent;
+  pointer-events: none
 }
 
 .conf-step__chair_selected {

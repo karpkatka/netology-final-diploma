@@ -1,8 +1,3 @@
-//createRequest(`event=sale_add&timestamp=${localStorage.getItem('timeStamp')}&hallId=${localStorage.getItem('hallId')}&seanceId=${localStorage.getItem('seanceId')}&hallConfiguration=${localStorage.getItem('hallConfig')}`, (response) => {
-//    let boop = JSON.parse(response);
-//    wrapper.insertAdjacentHTML("beforeEnd",boop)
-//})
-
 let filmTItle = document.querySelector(".ticket__title");
 let chairRow = document.querySelector(".ticket__chairs");
 let hallNumber = document.querySelector(".ticket__hall");
@@ -25,18 +20,4 @@ filmTItle.textContent = localStorage.getItem("filmTitle");
 chairRow.textContent = rowChairArray.join("");
 hallNumber.textContent = localStorage.getItem("hallNumber").slice(4); //slice
 seanceTime.textContent = localStorage.getItem("seanceStart");
-
-let stringQR = ("seanceId:" + localStorage.getItem("seanceId") + ";" + "film:" + localStorage.getItem("filmTitle") + ";" + "places:" + chairRow.textContent + ";" + "seanceTime" + seanceTime.textContent + ";" + "cost:" + localStorage.getItem("ticketCost")).split(" ").join("");
-const qrcode = QRCreator(stringQR, {
-	image: 'svg'
-});
-
-let qrCodePlacement = document.querySelector(".ticket__info-qr");
-
-qrCodePlacement.append(qrcode.result);
-
-//const content = (qrcode) =>{
-//return qrcode.error ?
-//`недопустимые исходные данные ${qrcode.error}`:
-//qrcode.result;
-//};
+totalCost.textContent = localStorage.getItem("ticketCost");
